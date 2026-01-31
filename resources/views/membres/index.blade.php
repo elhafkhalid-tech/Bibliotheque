@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Livres</title>
+    <title>Membres</title>
 </head>
 <body>
 
-    <h1>Livres</h1>
+    <h1>Membres</h1>
 
     <ul>
-        @foreach ($livres as $livre)
+        @foreach ($membres as $membre)
             <li>
-                {{ $livre->titre }}
+                {{ $membre->nom }}
                 <!-- EDIT -->
-                <a href="{{ route('livres.edit',$livre->id) }}">
+                <a href="{{ route('membres.edit', $membre->id) }}">
                     ✏️ Modifier
                 </a>
 
                 <!-- DELETE -->
-                <form action="{{ route('livres.destroy', $livre->id) }}"
+                <form action="{{ route('membres.destroy', $membre->id) }}"
                       method="POST"
                       style="display:inline">
 
@@ -26,11 +26,11 @@
                     @method('DELETE')
 
                     <button type="submit"
-                        onclick="return confirm('Supprimer ce livre ?')">
+                        onclick="return confirm('Supprimer ce membre ?')">
                         🗑️ Supprimer
                     </button>
 
-                    <a href="{{ route('livres.show', $livre->id) }}">
+                    <a href="{{ route('membres.show', $membre->id) }}">
                     👁️ Voir
                 </a>
                 </form>

@@ -7,6 +7,7 @@
 
 <body>
     <h1>Ajouter une nouvelle Category</h1>
+    
     @if ($errors->any())
         <div style="color: red">
             <ul>
@@ -19,7 +20,7 @@
         </div>
     @endif
 
-   <form action="{{ route('categories.store') }}" method="POST">
+   <form action="{{route('categories.store')}}" method="POST">
        @csrf
        <label for="">Nom de la category</label>
        <input type="text" name="name" value="{{ old('name') }}">
@@ -27,3 +28,4 @@
    </form>
 </body>
 </html>
+

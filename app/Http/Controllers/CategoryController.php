@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Category;
@@ -17,13 +16,16 @@ public function create(){
 }
 
 public function store(Request $request){
-    $validated = $request->validate([
-        'name' => ['required','string','max:255']
-    ]);
+    $validated = $request->validate(
+        [
+            'name' => ['required','string','max:255'],
+        ]
+    );
 
     Category::create($validated);
-
+    
     return Redirect()->route('categories.index');
-}
+     
+    }
 }
 

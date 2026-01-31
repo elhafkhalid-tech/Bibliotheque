@@ -2,12 +2,13 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Livre extends Model
 {
-    protected $fillable = ['titre','auteur','categorie_id'];
+    protected $fillable = ['titre','auteur','category_id'];
     
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);      
     }
 
     public function emprunts(){
