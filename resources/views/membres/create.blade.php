@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Créer un membre</title>
-</head>
-<body>
-
-<h1>Ajouter un membre</h1>
-
 <form action="{{ route('membres.store') }}" method="POST">
     @csrf
-    <label>nom</label>
-    <input type="text" name="nom" value="{{ old('nom') }}">
 
-    <br><br>
+    <label>Nom</label>
+    <input type="text" name="name" value="{{ old('name') }}">
 
-    <label>email</label>
-    <input type="text" name="email" value="{{ old('email') }}">
+    <label>Email</label>
+    <input type="email" name="email" value="{{ old('email') }}">
 
-    <br><br>
+    <label>Password</label>
+    <input type="password" name="password">
+
+    <label>Confirmer Password</label>
+    <input type="password" name="password_confirmation">
 
     <button type="submit">Ajouter</button>
 </form>
-
-</body>
-</html>
